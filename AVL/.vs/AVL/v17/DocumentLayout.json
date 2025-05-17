@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\",
+  "WorkspaceRootPath": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|solutionrelative:AVL\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|solutionrelative:AVL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EE32FA0D-2DA3-4AF1-A8CB-B30FCEBBF36C}|AVL\\AVL.vcxproj|solutionrelative:AVL\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Source.cpp",
-              "DocumentMoniker": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Source.cpp",
+              "DocumentMoniker": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Source.cpp",
               "RelativeDocumentMoniker": "AVL\\Source.cpp",
-              "ToolTip": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Source.cpp",
+              "ToolTip": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Source.cpp",
               "RelativeToolTip": "AVL\\Source.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-06T10:57:44.757Z"
             },
@@ -40,11 +40,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Main.cpp",
-              "DocumentMoniker": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Main.cpp",
+              "DocumentMoniker": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Main.cpp",
               "RelativeDocumentMoniker": "AVL\\Main.cpp",
-              "ToolTip": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Main.cpp",
+              "ToolTip": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Main.cpp",
               "RelativeToolTip": "AVL\\Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-06T10:51:17.074Z"
             },
@@ -52,11 +52,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Header.h",
-              "DocumentMoniker": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Header.h",
+              "DocumentMoniker": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Header.h",
               "RelativeDocumentMoniker": "AVL\\Header.h",
-              "ToolTip": "D:\\TH\u1EF0C H\u00C0NH C\u1EA4U TR\u00DAC D\u1EEE LI\u1EC6U V\u00C0 GI\u1EA2I THU\u1EACT\\AVL-Tree\\AVL\\AVL\\Header.h",
+              "ToolTip": "D:\\Th\u1EF1c H\u00E0nh L\u1EADp Tr\u00ECnh C\u1EA5u Tr\u00FAc D\u1EEF Li\u1EC7u V\u00E0 Gi\u1EA3i Thu\u1EADt\\AVLTree_ThucHanhCauTrucDuLieuVaGiaiThuat\\AVL\\AVL\\Header.h",
               "RelativeToolTip": "AVL\\Header.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvw0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-06T10:39:03.841Z",
               "EditorCaption": ""
