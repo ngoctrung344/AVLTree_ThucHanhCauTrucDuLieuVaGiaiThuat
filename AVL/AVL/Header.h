@@ -1,16 +1,17 @@
-﻿#include "iostream"
-using  namespace std;
+﻿#include <iostream>
+using namespace std;
 
-
-// Cấu trúc nút của cây AVL
+// Định nghĩa cấu trúc Node
 struct Node {
-    int key; // Giá trị của nút
-    struct Node* left; // Con trỏ đến nút con bên trái
-    struct Node* right; // Con trỏ đến nút con bên phải
-    int height; // Chiều cao của nút
+    int key;        // giá trị trong node
+    Node* left;     // con trỏ đến cây con bên trái
+    Node* right;    // con trỏ đến cây con bên phải
+    int height;     // chiều cao node (để cân bằng AVL)
 };
-// Định nghĩa kiểu con trỏ NodePtr thay cho Node*
-typedef Node* NodePtr;
+
+// Định nghĩa alias cho con trỏ Node*
+typedef Node* nodeptr;
+
 //đặt tên biến ngắn gọn, chi tiết, dễ hiểu
 //phần main đặt tên biến ngắn gọn viết tắt 
 
@@ -18,11 +19,15 @@ typedef Node* NodePtr;
 //void NLR(tree root);
 //void LRN(tree root);
 //void NLR(tree root);
-NodePtr insert(NodePtr node, int key);
-int max(int a, int b);
-NodePtr init(int k);
-int height(NodePtr node);
-NodePtr rightRotate(NodePtr y);
-NodePtr leftRotate(NodePtr x);
-int getBalance(NodePtr node);
-void inOrder(NodePtr root);
+
+void init(nodeptr& node);
+nodeptr createNode(int key);
+int getHeight(nodeptr node);
+int getBalance(nodeptr node);
+nodeptr rightRotate(nodeptr y);
+nodeptr leftRotate(nodeptr x);
+nodeptr minValueNode(nodeptr node);
+nodeptr insert(nodeptr node, int key);
+nodeptr deleteNode(nodeptr root, int key);
+void preOrder(nodeptr root);
+void printMenu();

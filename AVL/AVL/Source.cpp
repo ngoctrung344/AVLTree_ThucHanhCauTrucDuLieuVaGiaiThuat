@@ -1,114 +1,216 @@
 ﻿#include "Header.h"
-// Hàm trả về giá trị lớn hơn giữa hai số nguyên
-int max(int a, int b) {
-    return (a > b) ? a : b;
-}
-// Hàm khởi tạo một nút mới với giá trị key truyền vào
-NodePtr init(int k) {
-    NodePtr newNode = new Node; // Tạo nút mới
-    newNode->key = k; // Gán giá trị cho nút
-    newNode->left = nullptr; // Khởi tạo con trỏ bên trái
-    newNode->right = nullptr; // Khởi tạo con trỏ bên phải
-    newNode->height = 1; // Khởi tạo chiều cao
-    return newNode; // Trả về nút mới
+
+// Hàm khởi tạo nodeptr gán NULL (rỗng)
+void init(nodeptr& node) {
+    node = NULL;  // Sử dụng NULL để khởi tạo
 }
 
-// Hàm lấy chiều cao của nút
-int height(NodePtr node) {
-    return node ? node->height : 0; // Nếu nút không tồn tại, trả về 0
+// Hàm tạo node mới với key cho trước
+nodeptr createNode(int key) {
+    nodeptr node = new Node;
+    node->key = key;
+    node->left = NULL;  // Sử dụng NULL
+    node->right = NULL; // Sử dụng NULL
+    node->height = 1;   // node mới được tạo chiều cao là 1 (lá)
+    return node;
 }
 
-// Hàm lấy hệ số cân bằng của nút
-int getBalance(NodePtr node) {
-    if (!node) return 0; // Nếu nút không tồn tại, trả về 0
-    return height(node->left) - height(node->right); // Hệ số cân bằng = chiều cao bên trái - chiều cao bên phải
+// Hàm lấy chiều cao của node (nếu node null trả về 0)
+int getHeight(nodeptr node) {
+    if (node == NULL)  // Sử dụng NULL
+        return 0;
+    return node->height;
 }
 
-// Hàm xoay phải cho cây AVL
-NodePtr rightRotate(NodePtr y) {
-    NodePtr x = y->left; // Nút con bên trái
-    NodePtr T2 = x->right; // Nút con bên phải của x
+// Hàm lấy độ cân bằng của node = chiều cao cây con trái - chiều cao cây con phải
+int getBalance(nodeptr node) {
+    if (node == NULL)  // Sử dụng NULL
+        return 0;
+    return getHeight(node->left) - getHeight(node->right);
+}
 
-    // Thực hiện xoay
+// Xoay phải cây con gốc y để cân bằng (Right Rotate)
+nodeptr rightRotate(nodeptr y) {
+    nodeptr x = y->left;
+    nodeptr T2 = x->right;
+
+    // Xoay
     x->right = y;
     y->left = T2;
 
-    // Cập nhật chiều cao
-    y->height = max(height(y->left), height(y->right)) + 1;
-    x->height = max(height(x->left), height(x->right)) + 1;
+    // Cập nhật lại chiều cao
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
 
-    // Trả về nút gốc mới
+    // Trả về node gốc mới
     return x;
 }
 
-// Hàm xoay trái cho cây AVL
-NodePtr leftRotate(NodePtr x) {
-    NodePtr y = x->right; // Nút con bên phải
-    NodePtr T2 = y->left; // Nút con bên trái của y
+// Xoay trái cây con gốc x để cân bằng (Left Rotate)
+nodeptr leftRotate(nodeptr x) {
+    nodeptr y = x->right;
+    nodeptr T2 = y->left;
 
-    // Thực hiện xoay
+    // Xoay
     y->left = x;
     x->right = T2;
 
-    // Cập nhật chiều cao
-    x->height = max(height(x->left), height(x->right)) + 1;
-    y->height = max(height(y->left), height(y->right)) + 1;
+    // Cập nhật lại chiều cao
+    x->height = max(getHeight(x->left), getHeight(x->right)) + 1;
+    y->height = max(getHeight(y->left), getHeight(y->right)) + 1;
 
-    // Trả về nút gốc mới
+    // Trả về node gốc mới
     return y;
 }
 
-// Hàm chèn một khóa vào cây AVL và trả về nút gốc mới
-NodePtr insert(NodePtr node, int key) {
-    // Thực hiện chèn như cây nhị phân tìm kiếm
-    if (!node)
-        return init(key); // Tạo nút mới với hàm init
+// Tìm node nhỏ nhất trong cây (node xa trái nhất)
+nodeptr minValueNode(nodeptr node) {
+    nodeptr current = node;
+    while (current->left != NULL)  // Sử dụng NULL
+        current = current->left;
+    return current;
+}
+
+// Hàm đệ quy chèn một key vào cây AVL, trả về node gốc mới sau khi cân bằng
+nodeptr insert(nodeptr node, int key) {
+    // 1. Chèn bình thường như BST
+    if (node == NULL)  // Sử dụng NULL
+        return createNode(key);
 
     if (key < node->key)
-        node->left = insert(node->left, key); // Chèn vào bên trái
+        node->left = insert(node->left, key);
     else if (key > node->key)
-        node->right = insert(node->right, key); // Chèn vào bên phải
-    else // Không cho phép khóa trùng lặp
+        node->right = insert(node->right, key);
+    else // Không cho chèn key trùng
         return node;
 
-    // Cập nhật chiều cao của nút tổ tiên
-    node->height = 1 + max(height(node->left), height(node->right));
+    // 2. Cập nhật chiều cao của node
+    node->height = 1 + max(getHeight(node->left), getHeight(node->right));
 
-    // Lấy hệ số cân bằng
+    // 3. Tính độ cân bằng để kiểm tra việc cân bằng
     int balance = getBalance(node);
 
-    // Nếu nút không cân bằng, thực hiện các trường hợp xoay
-    // Trường hợp trái trái
+    // 4. Kiểm tra 4 trường hợp mất cân bằng
+
+    // Trường hợp Left Left
     if (balance > 1 && key < node->left->key)
         return rightRotate(node);
 
-    // Trường hợp phải phải
+    // Trường hợp Right Right
     if (balance < -1 && key > node->right->key)
         return leftRotate(node);
 
-    // Trường hợp trái phải
+    // Trường hợp Left Right
     if (balance > 1 && key > node->left->key) {
         node->left = leftRotate(node->left);
         return rightRotate(node);
     }
 
-    // Trường hợp phải trái
+    // Trường hợp Right Left
     if (balance < -1 && key < node->right->key) {
         node->right = rightRotate(node->right);
         return leftRotate(node);
     }
 
-    // Trả về con trỏ nút không thay đổi
+    // Nếu cây cân bằng thì trả lại node hiện tại
     return node;
 }
 
-// Hàm in thứ tự cây
-void inOrder(NodePtr root) {
-    if (root) {
-        inOrder(root->left); // In cây con bên trái
-        cout << root->key << " "; // In giá trị của nút
-        inOrder(root->right); // In cây con bên phải
+// Hàm đệ quy xóa node có key cho trước, trả về node gốc mới sau khi cân bằng
+nodeptr deleteNode(nodeptr root, int key) {
+    // Bước 1: tìm node cần xóa như BST
+    if (root == NULL)  // Sử dụng NULL
+        return root;
+
+    if (key < root->key)
+        root->left = deleteNode(root->left, key);
+    else if (key > root->key)
+        root->right = deleteNode(root->right, key);
+    else {
+        // node có key cần xóa tìm thấy
+
+        // node chỉ có 1 con hoặc không có con
+        if ((root->left == NULL) || (root->right == NULL)) {
+            nodeptr temp = root->left ? root->left : root->right;
+
+            // Không có con
+            if (temp == NULL) {
+                temp = root;
+                root = NULL;  // Sử dụng NULL
+            }
+            else // Có 1 con thì thay node bằng con đó
+                *root = *temp;
+
+            delete temp;
+        }
+        else {
+            // node có 2 con:
+            // Tìm node nhỏ nhất bên cây con phải
+            nodeptr temp = minValueNode(root->right);
+
+            // Sao chép giá trị
+            root->key = temp->key;
+
+            // Xóa node nhỏ nhất đó trong cây con phải
+            root->right = deleteNode(root->right, temp->key);
+        }
+    }
+
+    // Nếu chỉ có 1 node thì return
+    if (root == NULL)  // Sử dụng NULL
+        return root;
+
+    // Bước 2: cập nhật chiều cao
+    root->height = 1 + max(getHeight(root->left), getHeight(root->right));
+
+    // Bước 3: cân bằng lại cây
+    int balance = getBalance(root);
+
+    // Nếu mất cân bằng thì 4 trường hợp:
+
+    // Left Left Case
+    if (balance > 1 && getBalance(root->left) >= 0)
+        return rightRotate(root);
+
+    // Left Right Case
+    if (balance > 1 && getBalance(root->left) < 0) {
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+
+    // Right Right Case
+    if (balance < -1 && getBalance(root->right) <= 0)
+        return leftRotate(root);
+
+    // Right Left Case
+    if (balance < -1 && getBalance(root->right) > 0) {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+
+    return root;
+}
+
+// Hàm duyệt cây theo thứ tự preorder và in key ra màn hình
+void preOrder(nodeptr root) {
+    if (root != NULL) {  // Sử dụng NULL
+        cout << root->key << " ";
+        preOrder(root->left);
+        preOrder(root->right);
     }
 }
+
+// Hàm in menu ra màn hình
+void printMenu() {
+    cout << "\n------------------- MENU -------------------\n";
+    cout << "1. Chen phan tu vao cay AVL\n";
+    cout << "2. Xoa phan tu khoi cay AVL\n";
+    cout << "3. Duyet cay (Preorder)\n";
+    cout << "4. Thoat\n";
+    cout << "--------------------------------------------\n";
+    cout << "Nhap lua chon: ";
+}
+
+
 
 

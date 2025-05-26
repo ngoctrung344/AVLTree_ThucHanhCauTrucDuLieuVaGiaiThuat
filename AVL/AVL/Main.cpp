@@ -1,23 +1,45 @@
 ﻿#include "Header.h"
 
 int main() {
-    NodePtr root = nullptr; // Khởi tạo cây AVL rỗng
+    nodeptr root;
+    init(root);  // Khởi tạo cây rỗng
 
-    // Chèn một số khóa
-    int keys[] = { 10, 20, 30, 40, 50, 25 };
+    int choice,n;
+    int value;
 
-    cout << "Chèn các khóa: ";
-    for (int k : keys)
-        cout << k << " "; // In các khóa đã chèn
-    cout << endl;
+    while (true) {
+        printMenu();
+        cin >> choice;
 
-    for (int k : keys) {
-        root = insert(root, k); // Chèn từng khóa vào cây
+        switch (choice) {
+        case 1:
+            cout << "Nhap gia tri phan tu can chen: ";
+            cin >> n;
+            for (int i = 0; i < n; i++)
+            {
+                cout << "\nGia tri phan tu thu " << i + 1 << " :";
+                cin >> value;
+                root = insert(root, value);
+            }
+            break;
+        case 2:
+            cout << "Nhap gia tri phan tu can xoa: ";
+            cin >> value;
+            root = deleteNode(root, value);
+            cout << "Da xoa " << value << " khoi cay AVL (neu co).\n";
+            break;
+        case 3:
+            cout << "Duyet cay theo thu tu Preorder: ";
+            preOrder(root);
+            cout << endl;
+            break;
+        case 4:
+            cout << "Thoat chuong trinh. Tam biet!\n";
+            return 0;
+        default:
+            cout << "Lua chon khong hop le. Vui long chon lai.\n";
+        }
     }
-
-    cout << "Duyệt cây theo thứ tự (in-order) là:\n";
-    inOrder(root); // In cây theo thứ tự
-    cout << endl;
 
     return 0;
 }
