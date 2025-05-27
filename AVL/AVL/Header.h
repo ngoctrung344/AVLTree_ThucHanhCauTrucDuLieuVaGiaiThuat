@@ -10,7 +10,7 @@ struct Node {
 };
 
 // Định nghĩa alias cho con trỏ Node*
-typedef Node* nodeptr;
+typedef Node* treeAVL;
 
 //đặt tên biến ngắn gọn, chi tiết, dễ hiểu
 //phần main đặt tên biến ngắn gọn viết tắt 
@@ -20,14 +20,14 @@ typedef Node* nodeptr;
 //void LRN(tree root);
 //void NLR(tree root);
 
-void init(nodeptr& node);
-nodeptr createNode(int key);
-int getHeight(nodeptr node);
-int getBalance(nodeptr node);
-nodeptr rightRotate(nodeptr y);
-nodeptr leftRotate(nodeptr x);
-nodeptr minValueNode(nodeptr node);
-nodeptr insert(nodeptr node, int key);
-nodeptr deleteNode(nodeptr root, int key);
-void preOrder(nodeptr root);
+void init(treeAVL& node);
+treeAVL createNode(int key);
+int getHeight(treeAVL node);
+int getBalance(treeAVL node);
+treeAVL rightRotate(treeAVL y);
+treeAVL leftRotate(treeAVL x);
+treeAVL minValueNode(treeAVL node);
+treeAVL insert(treeAVL node, int key);
+treeAVL deleteNode(treeAVL root, int key);
+void preOrder(treeAVL root);
 void printMenu();

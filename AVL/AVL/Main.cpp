@@ -1,7 +1,7 @@
 ﻿#include "Header.h"
 
 int main() {
-    nodeptr root;
+    treeAVL root;
     init(root);  // Khởi tạo cây rỗng
 
     int choice,n;

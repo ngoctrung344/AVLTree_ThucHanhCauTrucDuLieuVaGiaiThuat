@@ -1,13 +1,23 @@
 ﻿#include "Header.h"
 
-// Hàm khởi tạo nodeptr gán NULL (rỗng)
-void init(nodeptr& node) {
+//// Định nghĩa cấu trúc Node
+//struct Node {
+//    int key;        // giá trị trong node
+//    Node* left;     // con trỏ đến cây con bên trái
+//    Node* right;    // con trỏ đến cây con bên phải
+//    int height;     // chiều cao node (để cân bằng AVL)
+//};
+//// Định nghĩa alias cho con trỏ Node*
+//typedef Node* treeAVL;
+
+// Hàm khởi tạo treeAVL gán NULL (rỗng)
+void init(treeAVL& node) {
     node = NULL;  // Sử dụng NULL để khởi tạo
 }
 
 // Hàm tạo node mới với key cho trước
-nodeptr createNode(int key) {
-    nodeptr node = new Node;
+treeAVL createNode(int key) {
+    treeAVL node = new Node;
     node->key = key;
     node->left = NULL;  // Sử dụng NULL
     node->right = NULL; // Sử dụng NULL
@@ -16,24 +26,29 @@ nodeptr createNode(int key) {
 }
 
 // Hàm lấy chiều cao của node (nếu node null trả về 0)
-int getHeight(nodeptr node) {
+int getHeight(treeAVL node) {
     if (node == NULL)  // Sử dụng NULL
         return 0;
     return node->height;
 }
 
 // Hàm lấy độ cân bằng của node = chiều cao cây con trái - chiều cao cây con phải
-int getBalance(nodeptr node) {
+int getBalance(treeAVL node) {
     if (node == NULL)  // Sử dụng NULL
         return 0;
     return getHeight(node->left) - getHeight(node->right);
 }
 
 // Xoay phải cây con gốc y để cân bằng (Right Rotate)
-nodeptr rightRotate(nodeptr y) {
-    nodeptr x = y->left;
-    nodeptr T2 = x->right;
-
+treeAVL rightRotate(treeAVL y) {
+    treeAVL x  = y->left;
+    treeAVL T2 = x->right;
+    /*x trái
+    y trái
+    t2 phải */
+     /*xoay
+cho y vào trái của x
+n   */
     // Xoay
     x->right = y;
     y->left = T2;
@@ -47,9 +62,9 @@ nodeptr rightRotate(nodeptr y) {
 }
 
 // Xoay trái cây con gốc x để cân bằng (Left Rotate)
-nodeptr leftRotate(nodeptr x) {
-    nodeptr y = x->right;
-    nodeptr T2 = y->left;
+treeAVL leftRotate(treeAVL x) {
+    treeAVL y = x->right;
+    treeAVL T2 = y->left;
 
     // Xoay
     y->left = x;
@@ -64,15 +79,15 @@ nodeptr leftRotate(nodeptr x) {
 }
 
 // Tìm node nhỏ nhất trong cây (node xa trái nhất)
-nodeptr minValueNode(nodeptr node) {
-    nodeptr current = node;
+treeAVL minValueNode(treeAVL node) {
+    treeAVL current = node;
     while (current->left != NULL)  // Sử dụng NULL
         current = current->left;
     return current;
 }
 
 // Hàm đệ quy chèn một key vào cây AVL, trả về node gốc mới sau khi cân bằng
-nodeptr insert(nodeptr node, int key) {
+treeAVL insert(treeAVL node, int key) {
     // 1. Chèn bình thường như BST
     if (node == NULL)  // Sử dụng NULL
         return createNode(key);
@@ -117,7 +132,7 @@ nodeptr insert(nodeptr node, int key) {
 }
 
 // Hàm đệ quy xóa node có key cho trước, trả về node gốc mới sau khi cân bằng
-nodeptr deleteNode(nodeptr root, int key) {
+treeAVL deleteNode(treeAVL root, int key) {
     // Bước 1: tìm node cần xóa như BST
     if (root == NULL)  // Sử dụng NULL
         return root;
@@ -131,7 +146,7 @@ nodeptr deleteNode(nodeptr root, int key) {
 
         // node chỉ có 1 con hoặc không có con
         if ((root->left == NULL) || (root->right == NULL)) {
-            nodeptr temp = root->left ? root->left : root->right;
+            treeAVL temp = root->left ? root->left : root->right;
 
             // Không có con
             if (temp == NULL) {
@@ -146,7 +161,7 @@ nodeptr deleteNode(nodeptr root, int key) {
         else {
             // node có 2 con:
             // Tìm node nhỏ nhất bên cây con phải
-            nodeptr temp = minValueNode(root->right);
+            treeAVL temp = minValueNode(root->right);
 
             // Sao chép giá trị
             root->key = temp->key;
@@ -162,7 +177,7 @@ nodeptr deleteNode(nodeptr root, int key) {
 
     // Bước 2: cập nhật chiều cao
     root->height = 1 + max(getHeight(root->left), getHeight(root->right));
-
+    
     // Bước 3: cân bằng lại cây
     int balance = getBalance(root);
 
@@ -192,7 +207,7 @@ nodeptr deleteNode(nodeptr root, int key) {
 }
 
 // Hàm duyệt cây theo thứ tự preorder và in key ra màn hình
-void preOrder(nodeptr root) {
+void preOrder(treeAVL root) {
     if (root != NULL) {  // Sử dụng NULL
         cout << root->key << " ";
         preOrder(root->left);
