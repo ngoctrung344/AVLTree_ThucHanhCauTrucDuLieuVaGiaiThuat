@@ -36,6 +36,13 @@ int main() {
         case 4:
             cout << "Thoat chuong trinh. Tam biet!\n";
             return 0;
+        case 5:
+            cout << "\nChieu cao cay la:" << getBalance(root) << endl;
+            break;
+        case 6:
+            cout << "\nNhap so node";cin >> value;
+            cout << "\nChieu cao node " << value << " la:" << getHeight(root);
+            break;
         default:
             cout << "Lua chon khong hop le. Vui long chon lai.\n";
         }

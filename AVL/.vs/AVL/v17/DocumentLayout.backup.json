@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "AVL\\Source.cpp",
               "ToolTip": "D:\\THLTCTDL\u0026TG\\AVL_THCTDL\u0026TG\\AVL\\AVL\\Source.cpp",
               "RelativeToolTip": "AVL\\Source.cpp",
-              "ViewState": "AgIAAFMAAAAAAAAAAADgv2QAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAiwEQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-06T10:57:44.757Z",
               "EditorCaption": ""
@@ -45,10 +45,9 @@
               "RelativeDocumentMoniker": "AVL\\Header.h",
               "ToolTip": "D:\\THLTCTDL\u0026TG\\AVL_THCTDL\u0026TG\\AVL\\AVL\\Header.h",
               "RelativeToolTip": "AVL\\Header.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-06T10:39:03.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T10:39:03.841Z"
             },
             {
               "$type": "Document",
@@ -58,10 +57,9 @@
               "RelativeDocumentMoniker": "AVL\\Main.cpp",
               "ToolTip": "D:\\THLTCTDL\u0026TG\\AVL_THCTDL\u0026TG\\AVL\\AVL\\Main.cpp",
               "RelativeToolTip": "AVL\\Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwCIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-06T10:51:17.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T10:51:17.074Z"
             }
           ]
         }

@@ -1,14 +1,5 @@
 ﻿#include "Header.h"
 
-//// Định nghĩa cấu trúc Node
-//struct Node {
-//    int key;        // giá trị trong node
-//    Node* left;     // con trỏ đến cây con bên trái
-//    Node* right;    // con trỏ đến cây con bên phải
-//    int height;     // chiều cao node (để cân bằng AVL)
-//};
-//// Định nghĩa alias cho con trỏ Node*
-//typedef Node* treeAVL;
 
 // Hàm khởi tạo treeAVL gán NULL (rỗng)
 void init(treeAVL& node) {
@@ -18,7 +9,7 @@ void init(treeAVL& node) {
 // Hàm tạo node mới với key cho trước
 treeAVL createNode(int key) {
     treeAVL node = new Node;
-    node->key = key;
+    node->key = key;    
     node->left = NULL;  // Sử dụng NULL
     node->right = NULL; // Sử dụng NULL
     node->height = 1;   // node mới được tạo chiều cao là 1 (lá)
@@ -41,15 +32,9 @@ int getBalance(treeAVL node) {
 
 // Xoay phải cây con gốc y để cân bằng (Right Rotate)
 treeAVL rightRotate(treeAVL y) {
-    treeAVL x  = y->left;
+    treeAVL x = y->left;
     treeAVL T2 = x->right;
-    /*x trái
-    y trái
-    t2 phải */
-     /*xoay
-cho y vào trái của x
-n   */
-    // Xoay
+    
     x->right = y;
     y->left = T2;
 
@@ -80,10 +65,10 @@ treeAVL leftRotate(treeAVL x) {
 
 // Tìm node nhỏ nhất trong cây (node xa trái nhất)
 treeAVL minValueNode(treeAVL node) {
-    treeAVL current = node;
-    while (current->left != NULL)  // Sử dụng NULL
-        current = current->left;
-    return current;
+    treeAVL p = node;
+    while (p->left != NULL)  // Sử dụng NULL
+        p = p->left;
+    return p;
 }
 
 // Hàm đệ quy chèn một key vào cây AVL, trả về node gốc mới sau khi cân bằng
@@ -226,6 +211,11 @@ void printMenu() {
     cout << "Nhap lua chon: ";
 }
 
-
+//int findMin(treeAVL root) {
+//    return (root->left == NULL) ? root->key : findMin(root->left);
+//}
+//int max(int a, int b) {
+//    return (a > b) ? a : b;
+//}
 
 
