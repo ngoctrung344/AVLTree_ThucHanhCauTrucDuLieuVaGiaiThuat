@@ -2,7 +2,7 @@
 
 int main() {
     treeAVL root;
-    init(root);  // Khởi tạo cây rỗng
+    init(root);  
 
     int choice,n;
     int value;
